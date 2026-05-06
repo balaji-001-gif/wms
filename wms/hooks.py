@@ -96,7 +96,7 @@ jinja = {
 # ------------------------------------------------------------------
 # After Migrate
 # ------------------------------------------------------------------
-# after_migrate = [
-#     "wms.wms.setup.setup_roles",
-#     "wms.wms.setup.setup_default_warehouse_zones",
-# ]
+after_migrate = [
+    "wms.wms.setup.setup_roles",
+    "wms.wms.setup.setup_default_warehouse_zones",
+]
