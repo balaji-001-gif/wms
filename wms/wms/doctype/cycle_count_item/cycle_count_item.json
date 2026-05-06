@@ -1,7 +1,7 @@
 {
   "doctype": "DocType",
   "name": "Cycle Count Item",
-  "module": "WMS",
+  "module": "wms",
   "istable": 1,
   "fields": [
     {

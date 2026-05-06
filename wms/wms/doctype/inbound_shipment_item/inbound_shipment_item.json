@@ -1,7 +1,7 @@
 {
   "doctype": "DocType",
   "name": "Inbound Shipment Item",
-  "module": "WMS",
+  "module": "wms",
   "istable": 1,
   "fields": [
     {

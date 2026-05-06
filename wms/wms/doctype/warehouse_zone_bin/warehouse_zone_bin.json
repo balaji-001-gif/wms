@@ -1,7 +1,7 @@
 {
   "doctype": "DocType",
   "name": "Warehouse Zone Bin",
-  "module": "WMS",
+  "module": "wms",
   "istable": 1,
   "fields": [
     {

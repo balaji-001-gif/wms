@@ -1,7 +1,7 @@
 {
   "doctype": "DocType",
   "name": "Bin Transfer",
-  "module": "WMS",
+  "module": "wms",
   "fields": [
     {
       "fieldname": "name1",

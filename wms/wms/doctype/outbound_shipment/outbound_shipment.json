@@ -1,6 +1,6 @@
 {
   "name": "Outbound Shipment",
-  "module": "WMS",
+  "module": "wms",
   "doctype": "DocType",
   "is_submittable": 1,
   "track_changes": 1,

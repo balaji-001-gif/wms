@@ -1,7 +1,7 @@
 {
   "doctype": "DocType",
   "name": "WMS Zone Item Group",
-  "module": "WMS",
+  "module": "wms",
   "istable": 1,
   "fields": [
     {

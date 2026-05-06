@@ -33,17 +33,17 @@ fixtures = [
 # ------------------------------------------------------------------
 doc_events = {
     "Purchase Receipt": {
-        "on_submit": "wms.WMS.events.inbound.on_purchase_receipt_submit",
+        "on_submit": "wms.wms.events.inbound.on_purchase_receipt_submit",
     },
     "Delivery Note": {
-        "on_submit": "wms.WMS.events.outbound.on_delivery_note_submit",
-        "before_submit": "wms.WMS.events.outbound.validate_pick_list_linked",
+        "on_submit": "wms.wms.events.outbound.on_delivery_note_submit",
+        "before_submit": "wms.wms.events.outbound.validate_pick_list_linked",
     },
     "Stock Entry": {
-        "on_submit": "wms.WMS.events.stock.on_stock_entry_submit",
+        "on_submit": "wms.wms.events.stock.on_stock_entry_submit",
     },
     "Batch": {
-        "on_update": "wms.WMS.events.batch.check_expiry_alert",
+        "on_update": "wms.wms.events.batch.check_expiry_alert",
     },
 }
 
@@ -52,20 +52,20 @@ doc_events = {
 # ------------------------------------------------------------------
 scheduler_events = {
     "daily": [
-        "wms.WMS.tasks.batch_expiry.flag_expiring_batches",
-        "wms.WMS.tasks.replenishment.check_bin_levels",
+        "wms.wms.tasks.batch_expiry.flag_expiring_batches",
+        "wms.wms.tasks.replenishment.check_bin_levels",
     ],
     "hourly": [
-        "wms.WMS.tasks.slotting.auto_reslot_hot_items",
+        "wms.wms.tasks.slotting.auto_reslot_hot_items",
     ],
     "cron": {
         # Every 15 min – real-time zone utilisation refresh
         "*/15 * * * *": [
-            "wms.WMS.tasks.zone_utilisation.refresh_zone_capacity",
+            "wms.wms.tasks.zone_utilisation.refresh_zone_capacity",
         ],
         # Every night at 2 AM – cycle count generation
         "0 2 * * *": [
-            "wms.WMS.tasks.cycle_count.generate_daily_count_plan",
+            "wms.wms.tasks.cycle_count.generate_daily_count_plan",
         ],
     },
 }
@@ -74,8 +74,8 @@ scheduler_events = {
 # Permissions
 # ------------------------------------------------------------------
 has_permission = {
-    "Warehouse Zone": "wms.WMS.permissions.warehouse_zone.has_permission",
-    "Pick List WMS": "wms.WMS.permissions.pick_list.has_permission",
+    "Warehouse Zone": "wms.wms.permissions.warehouse_zone.has_permission",
+    "Pick List WMS": "wms.wms.permissions.pick_list.has_permission",
 }
 
 # ------------------------------------------------------------------
@@ -88,8 +88,8 @@ override_whitelisted_methods = {}
 # ------------------------------------------------------------------
 jinja = {
     "methods": [
-        "wms.WMS.utils.jinja_helpers.get_zone_label",
-        "wms.WMS.utils.jinja_helpers.barcode_svg",
+        "wms.wms.utils.jinja_helpers.get_zone_label",
+        "wms.wms.utils.jinja_helpers.barcode_svg",
     ]
 }
 
@@ -97,6 +97,6 @@ jinja = {
 # After Migrate
 # ------------------------------------------------------------------
 after_migrate = [
-    "wms.WMS.setup.setup_roles",
-    "wms.WMS.setup.setup_default_warehouse_zones",
+    "wms.wms.setup.setup_roles",
+    "wms.wms.setup.setup_default_warehouse_zones",
 ]
