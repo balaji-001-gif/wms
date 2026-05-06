@@ -30,17 +30,35 @@ class InboundShipment(Document):
         self.putaway_details = []
         zones = frappe.get_all(
             "Warehouse Zone",
-            filters={"warehouse": self.warehouse, "is_active": 1},
+            filters={"warehouse": self.warehouse},
             fields=["name", "zone_code", "zone_type", "priority"],
             order_by="priority asc",
         )
         for item_row in self.items:
             remaining = flt(item_row.get("received_qty", 0))
             for zone in zones:
-                if zone.zone_type not in ("Putaway", "Storage"):
-                    continue
                 if remaining <= 0:
                     break
+                
+                # Get available bins in this zone
+                zone_doc = frappe.get_doc("Warehouse Zone", zone.name)
+                available_bins = zone_doc.get_available_bins()
+                
+                for bin_info in available_bins:
+                    if remaining <= 0:
+                        break
+                    
+                    qty_to_put = min(remaining, flt(bin_info["available_qty"]))
+                    if qty_to_put <= 0:
+                        continue
+                        
+                    self.append("putaway_details", {
+                        "item_code": item_row.item_code,
+                        "zone": zone.name,
+                        "bin_code": bin_info["bin_code"],
+                        "qty": qty_to_put
+                    })
+                    remaining -= qty_to_put
 
     def _trigger_putaway(self):
         self.status = "Putaway Pending"

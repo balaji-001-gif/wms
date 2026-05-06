@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wms"
+version = "1.0.0"
+authors = [
+  { name="Your Company", email="dev@yourcompany.com" },
+]
+description = "End-to-end WMS for ERPNext v15+ inspired by Amazon, Flipkart, and Zepto workflows"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "python-barcode",
+    "qrcode",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/balaji-001-gif/wms"
+"Bug Tracker" = "https://github.com/balaji-001-gif/wms/issues"

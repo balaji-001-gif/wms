@@ -1,0 +1,13 @@
+include LICENSE
+include README.md
+recursive-include wms *.json
+recursive-include wms *.js
+recursive-include wms *.css
+recursive-include wms *.py
+recursive-include wms *.html
+recursive-include wms *.txt
+recursive-include wms *.svg
+recursive-include wms *.png
+recursive-include wms *.jpg
+recursive-include wms *.csv
+recursive-include wms *.md

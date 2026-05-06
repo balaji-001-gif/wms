@@ -1,8 +1,8 @@
 app_name = "wms"
 app_title = "Warehouse Management System"
-app_publisher = "Your Company"
+app_publisher = "WMS Team"
 app_description = "End-to-end WMS for ERPNext v15+ inspired by Amazon, Flipkart, and Zepto workflows"
-app_email = "dev@yourcompany.com"
+app_email = "support@wms-erpnext.com"
 app_license = "MIT"
 app_version = "1.0.0"
 

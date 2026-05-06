@@ -1,0 +1,81 @@
+[
+  {
+    "doctype": "Notification",
+    "name": "Batch Expiry Red Alert",
+    "enabled": 1,
+    "document_type": "Batch Expiry Alert",
+    "event": "Value Change",
+    "value_changed": "alert_level",
+    "filters": "[[\"Batch Expiry Alert\",\"alert_level\",\"=\",\"Red\"]]",
+    "recipients": [
+      {
+        "receiver_by_role": "WMS Manager"
+      }
+    ],
+    "subject": "URGENT: Batch {batch_id} expires in {days_to_expiry} days!",
+    "message": "The batch {batch_id} for item {item_code} is about to expire. Please take immediate action."
+  },
+  {
+    "doctype": "Notification",
+    "name": "Pick List Assigned",
+    "enabled": 1,
+    "document_type": "Pick List WMS",
+    "event": "Value Change",
+    "value_changed": "picker",
+    "recipients": [
+      {
+        "receiver_by_document_field": "picker"
+      }
+    ],
+    "subject": "New Pick List {name} Assigned",
+    "message": "You have been assigned a new pick list: {name}. Priority: {priority}."
+  },
+  {
+    "doctype": "Notification",
+    "name": "Inbound Shipment Arrived",
+    "enabled": 1,
+    "document_type": "Inbound Shipment",
+    "event": "Value Change",
+    "value_changed": "status",
+    "filters": "[[\"Inbound Shipment\",\"status\",\"=\",\"Received\"]]",
+    "recipients": [
+      {
+        "receiver_by_role": "WMS Manager"
+      }
+    ],
+    "subject": "Inbound Shipment {name} Received",
+    "message": "Shipment {name} from {supplier} has arrived and is ready for inspection."
+  },
+  {
+    "doctype": "Notification",
+    "name": "Zone Capacity Critical",
+    "enabled": 1,
+    "document_type": "Warehouse Zone",
+    "event": "Value Change",
+    "value_changed": "current_utilisation_pct",
+    "filters": "[[\"Warehouse Zone\",\"current_utilisation_pct\",\">=\",90]]",
+    "recipients": [
+      {
+        "receiver_by_role": "WMS Manager"
+      }
+    ],
+    "subject": "CRITICAL: Zone {zone_code} is {current_utilisation_pct}% full",
+    "message": "Warehouse zone {zone_code} in {warehouse} has reached critical capacity."
+  },
+  {
+    "doctype": "Notification",
+    "name": "Short Pick Alert",
+    "enabled": 1,
+    "document_type": "Pick List WMS",
+    "event": "Value Change",
+    "value_changed": "status",
+    "filters": "[[\"Pick List WMS\",\"status\",\"=\",\"Short Pick\"]]",
+    "recipients": [
+      {
+        "receiver_by_role": "WMS Manager"
+      }
+    ],
+    "subject": "SHORT PICK: Pick List {name} completed with missing items",
+    "message": "Pick list {name} was completed with short picks. Please review the variance."
+  }
+]

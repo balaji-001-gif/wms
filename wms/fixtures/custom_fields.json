@@ -1,0 +1,24 @@
+[
+  {
+    "doctype": "Custom Field",
+    "dt": "Delivery Note",
+    "fieldname": "wms_pick_list",
+    "label": "WMS Pick List",
+    "fieldtype": "Link",
+    "options": "Pick List WMS",
+    "insert_after": "customer",
+    "read_only": 1,
+    "module": "WMS"
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "Purchase Receipt",
+    "fieldname": "wms_inbound_shipment",
+    "label": "WMS Inbound Shipment",
+    "fieldtype": "Link",
+    "options": "Inbound Shipment",
+    "insert_after": "supplier",
+    "read_only": 1,
+    "module": "WMS"
+  }
+]
