@@ -1,7 +1,7 @@
 {
   "doctype": "DocType",
   "name": "Pick List WMS Item",
-  "module": "wms",
+  "module": "WMS",
   "istable": 1,
   "fields": [
     {

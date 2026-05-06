@@ -1,6 +1,6 @@
 {
   "name": "Cycle Count Entry",
-  "module": "wms",
+  "module": "WMS",
   "doctype": "DocType",
   "is_submittable": 1,
   "track_changes": 1,

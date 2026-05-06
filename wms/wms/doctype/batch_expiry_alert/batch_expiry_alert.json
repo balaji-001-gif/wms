@@ -1,6 +1,6 @@
 {
   "name": "Batch Expiry Alert",
-  "module": "wms",
+  "module": "WMS",
   "doctype": "DocType",
   "is_submittable": 0,
   "track_changes": 1,

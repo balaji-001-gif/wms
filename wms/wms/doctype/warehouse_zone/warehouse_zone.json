@@ -1,6 +1,6 @@
 {
   "name": "Warehouse Zone",
-  "module": "wms",
+  "module": "WMS",
   "doctype": "DocType",
   "is_submittable": 0,
   "track_changes": 1,

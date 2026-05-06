@@ -1,7 +1,7 @@
 {
   "doctype": "DocType",
   "name": "Inbound Putaway Row",
-  "module": "wms",
+  "module": "WMS",
   "istable": 1,
   "fields": [
     {

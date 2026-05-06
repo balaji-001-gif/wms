@@ -1,7 +1,7 @@
 {
   "doctype": "DocType",
   "name": "Delivery Run Shipment",
-  "module": "wms",
+  "module": "WMS",
   "istable": 1,
   "fields": [
     {

@@ -1,7 +1,7 @@
 {
   "doctype": "DocType",
   "name": "Slotting Config",
-  "module": "wms",
+  "module": "WMS",
   "fields": [
     {
       "fieldname": "name1",

@@ -1,7 +1,7 @@
 {
   "doctype": "DocType",
   "name": "Kitting Order",
-  "module": "wms",
+  "module": "WMS",
   "fields": [
     {
       "fieldname": "name1",
