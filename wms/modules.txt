@@ -1,1 +1,1 @@
-WMS
+warehouse_management

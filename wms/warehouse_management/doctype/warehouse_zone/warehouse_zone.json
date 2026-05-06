@@ -1,0 +1,109 @@
+{
+  "name": "Warehouse Zone",
+  "module": "warehouse_management",
+  "doctype": "DocType",
+  "is_submittable": 0,
+  "track_changes": 1,
+  "naming_rule": "By fieldname",
+  "autoname": "field:zone_code",
+  "description": "Physical zone/aisle/bay within a warehouse (rack, cold-store, floor, staging, etc.)",
+  "fields": [
+    {
+      "fieldname": "zone_code",
+      "fieldtype": "Data",
+      "label": "Zone Code",
+      "reqd": 1,
+      "unique": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "zone_name",
+      "fieldtype": "Data",
+      "label": "Zone Name",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "warehouse",
+      "fieldtype": "Link",
+      "label": "Warehouse",
+      "options": "Warehouse",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "zone_type",
+      "fieldtype": "Select",
+      "label": "Zone Type",
+      "options": "Receiving\nPutaway\nStorage\nPicking\nPacking\nStaging\nCold Storage\nHazmat\nReturn\nCross-dock\nDispatch",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "col_break_1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "max_capacity_kg",
+      "fieldtype": "Float",
+      "label": "Max Capacity (kg)",
+      "default": 0
+    },
+    {
+      "fieldname": "current_utilisation_pct",
+      "fieldtype": "Percent",
+      "label": "Current Utilisation %",
+      "read_only": 1
+    },
+    {
+      "fieldname": "temperature_zone",
+      "fieldtype": "Select",
+      "label": "Temperature Zone",
+      "options": "\nAmbient\nChill (2-8°C)\nFrozen (-18°C)\nControlled (15-25°C)"
+    },
+    {
+      "fieldname": "section_break_1",
+      "fieldtype": "Section Break",
+      "label": "Bin Configuration"
+    },
+    {
+      "fieldname": "bins_table",
+      "fieldtype": "Table",
+      "label": "Bins",
+      "options": "Warehouse Zone Bin"
+    },
+    {
+      "fieldname": "section_break_2",
+      "fieldtype": "Section Break",
+      "label": "Putaway Rules"
+    },
+    {
+      "fieldname": "allowed_item_groups",
+      "fieldtype": "Table MultiSelect",
+      "label": "Allowed Item Groups",
+      "options": "WMS Zone Item Group"
+    },
+    {
+      "fieldname": "priority",
+      "fieldtype": "Int",
+      "label": "Putaway Priority",
+      "default": 10,
+      "description": "Lower number = higher priority during auto putaway"
+    },
+    {
+      "fieldname": "is_active",
+      "fieldtype": "Check",
+      "label": "Is Active",
+      "default": 1
+    }
+  ],
+  "permissions": [
+    {"role": "WMS Manager", "read": 1, "write": 1, "create": 1, "delete": 1},
+    {"role": "WMS Receiver", "read": 1},
+    {"role": "WMS Picker", "read": 1},
+    {"role": "Stock Manager", "read": 1, "write": 1, "create": 1}
+  ],
+  "links": [],
+  "search_fields": "zone_name,warehouse",
+  "title_field": "zone_name"
+}

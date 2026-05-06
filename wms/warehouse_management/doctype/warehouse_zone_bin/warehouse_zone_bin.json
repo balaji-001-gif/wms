@@ -1,0 +1,14 @@
+{
+  "doctype": "DocType",
+  "name": "Warehouse Zone Bin",
+  "module": "warehouse_management",
+  "istable": 1,
+  "fields": [
+    {
+      "fieldname": "description",
+      "fieldtype": "Data",
+      "label": "Description",
+      "in_list_view": 1
+    }
+  ]
+}
