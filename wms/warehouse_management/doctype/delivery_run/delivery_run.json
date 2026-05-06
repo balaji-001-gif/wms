@@ -5,7 +5,7 @@
   "is_submittable": 1,
   "track_changes": 1,
   "naming_rule": "Expression",
-  "autoname": "WMS-DR-.#####",
+  "autoname": "format:WMS-RUN-.YYYY.-.#####",
   "description": "Last-mile delivery run / route plan. Groups outbound shipments for a single vehicle/rider. Models Zepto rider batching.",
   "fields": [
     {

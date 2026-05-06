@@ -5,7 +5,7 @@
   "is_submittable": 1,
   "track_changes": 1,
   "naming_rule": "Expression",
-  "autoname": "WMS-IN-.#####",
+  "autoname": "format:WMS-INB-.YYYY.-.#####",
   "description": "Gate-to-put-away inbound flow (GRN → Inspection → Putaway). Maps to Amazon FC receive, Flipkart GRN, Zepto quick-receive.",
   "fields": [
     {

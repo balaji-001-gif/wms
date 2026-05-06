@@ -5,7 +5,7 @@
   "is_submittable": 1,
   "track_changes": 1,
   "naming_rule": "Expression",
-  "autoname": "WMS-OUT-.#####",
+  "autoname": "format:WMS-OUT-.YYYY.-.#####",
   "description": "End-to-end outbound order: Pick → Pack → Manifest → Dispatch. Models Amazon Ship, Flipkart dispatch, Zepto last-mile.",
   "fields": [
     {
