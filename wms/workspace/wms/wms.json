@@ -3,9 +3,40 @@
   "doctype": "Workspace",
   "module": "WMS",
   "label": "Warehouse Management",
+  "title": "Warehouse Management",
   "icon": "warehouse",
   "is_standard": 1,
   "public": 1,
-  "shortcuts": [],
-  "cards": []
+  "shortcuts": [
+    {"label": "Inbound Shipment", "type": "DocType", "doc_view": "List", "link_to": "Inbound Shipment"},
+    {"label": "Outbound Shipment", "type": "DocType", "doc_view": "List", "link_to": "Outbound Shipment"},
+    {"label": "Pick List WMS", "type": "DocType", "doc_view": "List", "link_to": "Pick List WMS"},
+    {"label": "Delivery Run", "type": "DocType", "doc_view": "List", "link_to": "Delivery Run"}
+  ],
+  "content": "[{\"type\":\"card\",\"data\":{\"card_name\":\"Inbound\",\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Outbound\",\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Warehouse Operations\",\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":12}}]",
+  "links": [
+    {"label": "Inbound", "type": "Card Break"},
+    {"label": "Inbound Shipment", "link_to": "Inbound Shipment", "link_type": "DocType", "type": "Link", "onboard": 1},
+    {"label": "Putaway Rule", "link_to": "Putaway Rule", "link_type": "DocType", "type": "Link", "onboard": 1},
+    {"label": "Warehouse Zone", "link_to": "Warehouse Zone", "link_type": "DocType", "type": "Link", "onboard": 1},
+
+    {"label": "Outbound", "type": "Card Break"},
+    {"label": "Outbound Shipment", "link_to": "Outbound Shipment", "link_type": "DocType", "type": "Link"},
+    {"label": "Pick List WMS", "link_to": "Pick List WMS", "link_type": "DocType", "type": "Link"},
+    {"label": "Delivery Run", "link_to": "Delivery Run", "link_type": "DocType", "type": "Link"},
+    {"label": "Packing Station", "link_to": "Packing Station", "link_type": "DocType", "type": "Link"},
+
+    {"label": "Warehouse Operations", "type": "Card Break"},
+    {"label": "Bin Transfer", "link_to": "Bin Transfer", "link_type": "DocType", "type": "Link"},
+    {"label": "Cycle Count Entry", "link_to": "Cycle Count Entry", "link_type": "DocType", "type": "Link"},
+    {"label": "Kitting Order", "link_to": "Kitting Order", "link_type": "DocType", "type": "Link"},
+    {"label": "Slotting Config", "link_to": "Slotting Config", "link_type": "DocType", "type": "Link"},
+    {"label": "Batch Expiry Alert", "link_to": "Batch Expiry Alert", "link_type": "DocType", "type": "Link"},
+
+    {"label": "Reports", "type": "Card Break"},
+    {"label": "Daily Dispatch Summary", "link_to": "Daily Dispatch Summary", "link_type": "Report", "is_query_report": 1, "type": "Link"},
+    {"label": "Zone Utilization", "link_to": "Zone Utilization", "link_type": "Report", "is_query_report": 1, "type": "Link"},
+    {"label": "Pick Accuracy Report", "link_to": "Pick Accuracy Report", "link_type": "Report", "is_query_report": 1, "type": "Link"},
+    {"label": "Inventory Aging Report", "link_to": "Inventory Aging Report", "link_type": "Report", "is_query_report": 1, "type": "Link"}
+  ]
 }
