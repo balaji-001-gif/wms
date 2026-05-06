@@ -1,0 +1,14 @@
+{
+  "name": "Inventory Aging Report",
+  "doctype": "Report",
+  "report_name": "Inventory Aging Report",
+  "report_type": "Script Report",
+  "module": "WMS",
+  "is_standard": "Yes",
+  "ref_doctype": "Stock Ledger Entry",
+  "filters": [
+    {"fieldname": "warehouse", "label": "Warehouse", "fieldtype": "Link", "options": "Warehouse"},
+    {"fieldname": "item_group", "label": "Item Group", "fieldtype": "Link", "options": "Item Group"},
+    {"fieldname": "min_aging_days", "label": "Min Aging Days", "fieldtype": "Int"}
+  ]
+}

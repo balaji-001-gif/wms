@@ -1,0 +1,12 @@
+{
+  "name": "Daily Dispatch Summary",
+  "doctype": "Report",
+  "report_name": "Daily Dispatch Summary",
+  "report_type": "Script Report",
+  "module": "WMS",
+  "is_standard": "Yes",
+  "ref_doctype": "Outbound Shipment",
+  "filters": [
+    {"fieldname": "date", "label": "Date", "fieldtype": "Date", "default": "Today"}
+  ]
+}

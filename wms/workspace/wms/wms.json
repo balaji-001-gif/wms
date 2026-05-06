@@ -1,0 +1,11 @@
+{
+  "name": "WMS",
+  "doctype": "Workspace",
+  "module": "WMS",
+  "label": "Warehouse Management",
+  "icon": "warehouse",
+  "is_standard": 1,
+  "public": 1,
+  "shortcuts": [],
+  "cards": []
+}

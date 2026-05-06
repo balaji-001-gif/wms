@@ -1,0 +1,62 @@
+name: WMS CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      mariadb:
+        image: mariadb:10.6
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: test_wms
+        ports: ["3306:3306"]
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=5
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Bench
+        run: pip install frappe-bench
+
+      - name: Init Bench
+        run: |
+          bench init --frappe-branch version-15 frappe-bench
+          cd frappe-bench
+          bench get-app erpnext --branch version-15
+          bench get-app wms $GITHUB_WORKSPACE
+
+      - name: Create Site
+        run: |
+          cd frappe-bench
+          bench new-site test.localhost \
+            --mariadb-root-password root \
+            --admin-password admin \
+            --db-name test_wms
+          bench --site test.localhost install-app erpnext
+          bench --site test.localhost install-app wms
+
+      - name: Run Tests
+        run: |
+          cd frappe-bench
+          bench --site test.localhost run-tests --app wms
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install ruff
+      - run: ruff check wms/

@@ -1,0 +1,84 @@
+{
+  "name": "Batch Expiry Alert",
+  "module": "WMS",
+  "doctype": "DocType",
+  "is_submittable": 0,
+  "track_changes": 1,
+  "naming_rule": "Expression",
+  "autoname": "WMS-BEA-.#####",
+  "description": "Tracks batches nearing expiry (FEFO / grocery perishable management). Critical for Zepto/Blinkit quick commerce.",
+  "fields": [
+    {
+      "fieldname": "item_code",
+      "fieldtype": "Link",
+      "label": "Item",
+      "options": "Item",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "batch_no",
+      "fieldtype": "Link",
+      "label": "Batch No",
+      "options": "Batch",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "warehouse",
+      "fieldtype": "Link",
+      "label": "Warehouse",
+      "options": "Warehouse",
+      "reqd": 1
+    },
+    {
+      "fieldname": "expiry_date",
+      "fieldtype": "Date",
+      "label": "Expiry Date",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "col_break_1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "days_to_expiry",
+      "fieldtype": "Int",
+      "label": "Days to Expiry",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "available_qty",
+      "fieldtype": "Float",
+      "label": "Available Qty",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "alert_level",
+      "fieldtype": "Select",
+      "label": "Alert Level",
+      "options": "Green\nYellow\nOrange\nRed\nExpired",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "action_taken",
+      "fieldtype": "Select",
+      "label": "Action Taken",
+      "options": "\nMark for Markdown\nReturn to Vendor\nQuarantine\nDispose\nClear via Promo",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "remarks",
+      "fieldtype": "Small Text",
+      "label": "Remarks"
+    }
+  ],
+  "permissions": [
+    {"role": "WMS Manager", "read": 1, "write": 1, "create": 1, "delete": 1},
+    {"role": "Stock Manager", "read": 1, "write": 1}
+  ]
+}

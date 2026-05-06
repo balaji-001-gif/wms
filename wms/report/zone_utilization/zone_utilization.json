@@ -1,0 +1,12 @@
+{
+  "name": "Zone Utilization",
+  "doctype": "Report",
+  "report_name": "Zone Utilization",
+  "report_type": "Script Report",
+  "module": "WMS",
+  "is_standard": "Yes",
+  "ref_doctype": "Warehouse Zone",
+  "filters": [
+    {"fieldname": "warehouse", "label": "Warehouse", "fieldtype": "Link", "options": "Warehouse"}
+  ]
+}

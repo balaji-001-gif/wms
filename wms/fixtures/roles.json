@@ -1,0 +1,6 @@
+[
+  {"doctype": "Role", "name": "WMS Manager", "role_name": "WMS Manager", "desk_access": 1},
+  {"doctype": "Role", "name": "WMS Picker", "role_name": "WMS Picker", "desk_access": 1},
+  {"doctype": "Role", "name": "WMS Receiver", "role_name": "WMS Receiver", "desk_access": 1},
+  {"doctype": "Role", "name": "WMS Packer", "role_name": "WMS Packer", "desk_access": 1}
+]
