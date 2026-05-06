@@ -1,8 +1,0 @@
-{
-    "css/wms.css": [
-        "public/css/wms.css"
-    ],
-    "js/wms.js": [
-        "public/js/wms.js"
-    ]
-}
