@@ -7,12 +7,12 @@ app_license = "MIT"
 app_version = "1.0.0"
 
 # ------------------------------------------------------------------
-# Required apps
+# Required Apps
 # ------------------------------------------------------------------
 required_apps = ["erpnext"]
 
 # ------------------------------------------------------------------
-# Fixtures – exported via bench export-fixtures
+# Fixtures
 # ------------------------------------------------------------------
 fixtures = [
     {"dt": "Custom Field", "filters": [["module", "=", "WMS"]]},
@@ -20,13 +20,16 @@ fixtures = [
     {"dt": "Workspace", "filters": [["module", "=", "WMS"]]},
     {"dt": "Print Format", "filters": [["module", "=", "WMS"]]},
     {"dt": "Role", "filters": [["name", "in", ["WMS Manager", "WMS Picker", "WMS Receiver", "WMS Packer"]]]},
+    # Optional but recommended
+    {"dt": "DocType", "filters": [["module", "=", "WMS"]]},
 ]
 
 # ------------------------------------------------------------------
-# Includes
+# Includes (Assets)
 # ------------------------------------------------------------------
-# app_include_css = "wms.css"
-# app_include_js = "wms.js"
+# Important: Use full /assets/ path for Frappe v15
+app_include_js = "/assets/wms/js/wms.js"
+# app_include_css = "/assets/wms/css/wms.css"      # Uncomment when you have CSS file
 
 # ------------------------------------------------------------------
 # Document Events
@@ -59,14 +62,10 @@ scheduler_events = {
         "wms.wms.tasks.slotting.auto_reslot_hot_items",
     ],
     "cron": {
-        # Every 15 min – real-time zone utilisation refresh
-        "*/15 * * * *": [
-            "wms.wms.tasks.zone_utilisation.refresh_zone_capacity",
-        ],
-        # Every night at 2 AM – cycle count generation
-        "0 2 * * *": [
-            "wms.wms.tasks.cycle_count.generate_daily_count_plan",
-        ],
+        # Every 15 minutes – zone utilisation
+        "*/15 * * * *": "wms.wms.tasks.zone_utilisation.refresh_zone_capacity",
+        # Every night at 2 AM – cycle count
+        "0 2 * * *": "wms.wms.tasks.cycle_count.generate_daily_count_plan",
     },
 }
 
@@ -79,12 +78,7 @@ has_permission = {
 }
 
 # ------------------------------------------------------------------
-# Override Whitelisted Methods
-# ------------------------------------------------------------------
-override_whitelisted_methods = {}
-
-# ------------------------------------------------------------------
-# Jinja
+# Jinja Helpers
 # ------------------------------------------------------------------
 jinja = {
     "methods": [
@@ -100,3 +94,8 @@ after_migrate = [
     "wms.wms.setup.setup_roles",
     "wms.wms.setup.setup_default_warehouse_zones",
 ]
+
+# ------------------------------------------------------------------
+# Override Whitelisted Methods (if needed in future)
+# ------------------------------------------------------------------
+override_whitelisted_methods = {}
