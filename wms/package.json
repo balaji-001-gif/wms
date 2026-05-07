@@ -9,5 +9,10 @@
   "license": "MIT",
   "dependencies": {
     "frappe-ui": "^0.1.0"
+  },
+  {
+  "name": "wms",
+  "version": "1.0.0",
+  "scripts": {}
   }
 }
