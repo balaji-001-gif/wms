@@ -1,0 +1,13 @@
+{
+  "name": "wms",
+  "description": "Warehouse Management System for ERPNext",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/balaji-001-gif/wms.git"
+  },
+  "author": "Balaji K",
+  "license": "MIT",
+  "dependencies": {
+    "frappe-ui": "^0.1.0"
+  }
+}
