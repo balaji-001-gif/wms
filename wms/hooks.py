@@ -15,10 +15,10 @@ required_apps = ["erpnext"]
 # Fixtures
 # ------------------------------------------------------------------
 fixtures = [
-    {"dt": "Custom Field", "filters": [["module", "=", "WMS"]]},
-    {"dt": "Property Setter", "filters": [["module", "=", "WMS"]]},
-    {"dt": "Workspace", "filters": [["module", "=", "WMS"]]},
-    {"dt": "Print Format", "filters": [["module", "=", "WMS"]]},
+    {"dt": "Custom Field", "filters": [["module", "=", "wms"]]},
+    {"dt": "Property Setter", "filters": [["module", "=", "wms"]]},
+    {"dt": "Workspace", "filters": [["module", "=", "wms"]]},
+    {"dt": "Print Format", "filters": [["module", "=", "wms"]]},
     {"dt": "Role", "filters": [["name", "in", ["WMS Manager", "WMS Picker", "WMS Receiver", "WMS Packer"]]]},
     # Optional but recommended
     {"dt": "DocType", "filters": [["module", "=", "WMS"]]},
